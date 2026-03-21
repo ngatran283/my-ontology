@@ -1,0 +1,292 @@
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms:<http://purl.org/dc/terms/> .
+@prefix gr:     <http://purl.org/goodrelations/v1#> .
+@prefix schema: <https://schema.org/> .
+@prefix etim:   <https://identifier.buildingsmart.org/uri/etim/etim/9.0/class/> .
+
+# Your ontology namespace — replace with your GitHub Pages URL
+@prefix prod:   <https://ngatran283.github.io/my-ontology/> .
+
+# Self-hosted ECLASS 11.0 subset for industrial connectors
+@prefix eclass: <https://ngatran283.github.io/my-ontology/eclass/> .
+
+
+# ==============================================================
+# ONTOLOGY DECLARATION
+# ==============================================================
+
+<https://ngatran283.github.io/my-ontology/>
+    rdf:type            owl:Ontology ;
+    rdfs:label          "Industrial Connector Product Ontology"@en ;
+    rdfs:comment        "Ontology for industrial electrical connectors. ECLASS 11.0 subset self-hosted. Maps to ETIM (via bSDD), GoodRelations, and schema.org."@en ;
+    dcterms:creator     "Nga Tran" ;
+    dcterms:subject     "Industrial connectors, product ontology, ECLASS, ETIM, UNSPSC" ;
+    owl:versionInfo     "1.0" .
+
+
+# ==============================================================
+# ECLASS 11.0 — Self-hosted subset
+# Product taxonomy. Each class links to the official ETIM
+# class on bSDD via skos:exactMatch.
+# ==============================================================
+
+eclass:27440201
+    rdf:type            owl:Class ;
+    rdfs:label          "Industrial connector complete"@en ;
+    rdfs:comment        "A complete industrial electrical connector."@en ;
+    skos:notation       "27440201" ;
+    skos:altLabel       "Steckverbinder"@de ;
+    rdfs:subClassOf     prod:IndustrialConnector ;
+    skos:exactMatch     etim:EC000436 ;
+    owl:equivalentClass schema:Product ;
+    owl:equivalentClass gr:ProductOrService .
+
+eclass:27440202
+    rdf:type            owl:Class ;
+    rdfs:label          "Shell for industrial connectors"@en ;
+    rdfs:comment        "The outer shell or housing of an industrial connector."@en ;
+    skos:notation       "27440202" ;
+    skos:altLabel       "Hood"@en ;
+    skos:altLabel       "Gehäuse"@de ;
+    skos:altLabel       "connector housing"@en ;
+    rdfs:subClassOf     eclass:27440201 ;
+    skos:exactMatch     etim:EC000437 .
+
+eclass:27440205
+    rdf:type            owl:Class ;
+    rdfs:label          "Insert for industrial connectors"@en ;
+    rdfs:comment        "The interior part of a connector that holds contacts."@en ;
+    skos:notation       "27440205" ;
+    skos:altLabel       "Einsatz"@de ;
+    skos:altLabel       "connector insert"@en ;
+    rdfs:subClassOf     eclass:27440201 ;
+    skos:exactMatch     etim:EC000438 .
+
+eclass:27440206
+    rdf:type            owl:Class ;
+    rdfs:label          "Contact for industrial connectors"@en ;
+    rdfs:comment        "An electrical contact element within a connector."@en ;
+    skos:notation       "27440206" ;
+    skos:altLabel       "Kontakt"@de ;
+    skos:altLabel       "electrical contact"@en ;
+    rdfs:subClassOf     eclass:27440201 ;
+    skos:exactMatch     etim:EC000440 .
+
+eclass:27440208
+    rdf:type            owl:Class ;
+    rdfs:label          "Cable gland / sealing"@en ;
+    rdfs:comment        "A sealing or cable gland component for connectors."@en ;
+    skos:notation       "27440208" ;
+    skos:altLabel       "Kabelverschraubung"@de ;
+    skos:altLabel       "Dichtung"@de ;
+    rdfs:subClassOf     eclass:27440201 ;
+    skos:exactMatch     etim:EC001234 .
+
+eclass:27440210
+    rdf:type            owl:Class ;
+    rdfs:label          "Connector accessory"@en ;
+    rdfs:comment        "An accessory used with an industrial connector."@en ;
+    skos:notation       "27440210" ;
+    skos:altLabel       "Zubehör"@de ;
+    rdfs:subClassOf     eclass:27440201 ;
+    skos:exactMatch     etim:EC001235 .
+
+eclass:27440212
+    rdf:type            owl:Class ;
+    rdfs:label          "Connector tool"@en ;
+    rdfs:comment        "A tool used for assembly or crimping of connectors."@en ;
+    skos:notation       "27440212" ;
+    skos:altLabel       "Werkzeug"@de ;
+    skos:altLabel       "crimping tool"@en ;
+    rdfs:subClassOf     eclass:27440201 ;
+    skos:exactMatch     etim:EC001236 .
+
+eclass:27440215
+    rdf:type            owl:Class ;
+    rdfs:label          "Connector housing frame"@en ;
+    rdfs:comment        "A modular housing frame that holds multiple inserts."@en ;
+    skos:notation       "27440215" ;
+    skos:altLabel       "Gehäuserahmen"@de ;
+    skos:altLabel       "modular housing"@en ;
+    rdfs:subClassOf     eclass:27440202 ;
+    skos:exactMatch     etim:EC001240 .
+
+eclass:27440216
+    rdf:type            owl:Class ;
+    rdfs:label          "Frame module"@en ;
+    rdfs:comment        "A module used inside a connector housing frame."@en ;
+    skos:notation       "27440216" ;
+    skos:altLabel       "Rahmenmodul"@de ;
+    rdfs:subClassOf     eclass:27440205 ;
+    skos:exactMatch     etim:EC001241 .
+
+
+# ==============================================================
+# ABSTRACT TOP-LEVEL CLASSES  (prod: namespace)
+# Used as anchors for properties and assembly rules only.
+# ==============================================================
+
+prod:IndustrialConnector
+    rdf:type            owl:Class ;
+    rdfs:label          "Industrial Connector"@en ;
+    rdfs:comment        "Abstract superclass for all industrial connector products."@en ;
+    skos:definition     "Electrical connector used in industrial environments, typically complying with IEC 61984."@en ;
+    owl:equivalentClass schema:Product ;
+    owl:equivalentClass gr:ProductOrService ;
+    rdfs:subClassOf     gr:SomeItems .
+
+prod:ConnectorAssembly
+    rdf:type            owl:Class ;
+    rdfs:label          "Connector Assembly"@en ;
+    rdfs:comment        "A complete assembled connector consisting of required parts."@en ;
+    rdfs:subClassOf     prod:IndustrialConnector .
+
+
+# ==============================================================
+# OBJECT PROPERTIES — Relations between products
+# ==============================================================
+
+prod:hasHousing
+    rdf:type            owl:ObjectProperty ;
+    rdfs:label          "has housing"@en ;
+    rdfs:comment        "Links a connector assembly to its housing."@en ;
+    rdfs:domain         prod:ConnectorAssembly ;
+    rdfs:range          eclass:27440202 .
+
+prod:hasInsert
+    rdf:type            owl:ObjectProperty ;
+    rdfs:label          "has insert"@en ;
+    rdfs:domain         prod:ConnectorAssembly ;
+    rdfs:range          eclass:27440205 .
+
+prod:hasContact
+    rdf:type            owl:ObjectProperty ;
+    rdfs:label          "has contact"@en ;
+    rdfs:domain         prod:ConnectorAssembly ;
+    rdfs:range          eclass:27440206 .
+
+prod:hasTool
+    rdf:type            owl:ObjectProperty ;
+    rdfs:label          "has tool"@en ;
+    rdfs:domain         prod:IndustrialConnector ;
+    rdfs:range          eclass:27440212 .
+
+prod:hasAccessory
+    rdf:type            owl:ObjectProperty ;
+    rdfs:label          "has accessory"@en ;
+    rdfs:domain         prod:IndustrialConnector ;
+    rdfs:range          eclass:27440210 .
+
+prod:hasSparePart
+    rdf:type            owl:ObjectProperty ;
+    rdfs:label          "has spare part"@en ;
+    rdfs:domain         prod:IndustrialConnector ;
+    rdfs:range          prod:IndustrialConnector .
+
+prod:hasAlternative
+    rdf:type            owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:label          "has alternative"@en ;
+    rdfs:comment        "Links a product to a functionally equivalent alternative."@en ;
+    rdfs:domain         prod:IndustrialConnector ;
+    rdfs:range          prod:IndustrialConnector .
+
+prod:hasSuccessor
+    rdf:type            owl:ObjectProperty ;
+    rdfs:label          "has successor"@en ;
+    rdfs:comment        "Links a discontinued product to its replacement."@en ;
+    rdfs:domain         prod:IndustrialConnector ;
+    rdfs:range          prod:IndustrialConnector .
+
+prod:isMatingConnectorOf
+    rdf:type            owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:label          "is mating connector of"@en ;
+    rdfs:comment        "Links two connectors that physically mate with each other."@en ;
+    rdfs:domain         prod:IndustrialConnector ;
+    rdfs:range          prod:IndustrialConnector .
+
+prod:isCompatibleWith
+    rdf:type            owl:ObjectProperty, owl:SymmetricProperty ;
+    rdfs:label          "is compatible with"@en ;
+    rdfs:comment        "Links products that are compatible."@en ;
+    rdfs:domain         prod:IndustrialConnector ;
+    rdfs:range          prod:IndustrialConnector .
+
+prod:requiresPart
+    rdf:type            owl:ObjectProperty ;
+    rdfs:label          "requires part"@en ;
+    rdfs:comment        "Defines that an assembly requires a specific type of part."@en ;
+    rdfs:domain         prod:ConnectorAssembly ;
+    rdfs:range          prod:IndustrialConnector .
+
+
+# ==============================================================
+# DATATYPE PROPERTIES
+# ==============================================================
+
+prod:size
+    rdf:type            owl:DatatypeProperty ;
+    rdfs:label          "size"@en ;
+    rdfs:comment        "Physical size designation (e.g. 3A, 6B, 16B)."@en ;
+    rdfs:domain         prod:IndustrialConnector ;
+    rdfs:range          xsd:string .
+
+prod:gender
+    rdf:type            owl:DatatypeProperty ;
+    rdfs:label          "gender"@en ;
+    rdfs:comment        "Gender of the connector (male or female)."@en ;
+    rdfs:domain         prod:IndustrialConnector ;
+    rdfs:range          xsd:string .
+
+prod:ipRating
+    rdf:type            owl:DatatypeProperty ;
+    rdfs:label          "IP protection rating"@en ;
+    rdfs:comment        "Protection class per IEC 60529 (e.g. IP65, IP67)."@en ;
+    rdfs:domain         prod:IndustrialConnector ;
+    rdfs:range          xsd:string .
+
+prod:productSeries
+    rdf:type            owl:DatatypeProperty ;
+    rdfs:label          "product series"@en ;
+    rdfs:comment        "The product series or family (e.g. Han A, Han B, Han Modular)."@en ;
+    rdfs:domain         prod:IndustrialConnector ;
+    rdfs:range          xsd:string .
+
+
+# ==============================================================
+# ASSEMBLY RESTRICTIONS (OWL)
+# Uses eclass: classes directly — no duplicate prod: classes needed.
+# ==============================================================
+
+prod:HanAConnector
+    rdf:type            owl:Class ;
+    rdfs:label          "Han A Connector Assembly"@en ;
+    rdfs:subClassOf     prod:ConnectorAssembly ;
+    rdfs:subClassOf
+        [ rdf:type           owl:Restriction ;
+          owl:onProperty     prod:hasHousing ;
+          owl:someValuesFrom eclass:27440202 ] ;
+    rdfs:subClassOf
+        [ rdf:type           owl:Restriction ;
+          owl:onProperty     prod:hasInsert ;
+          owl:someValuesFrom eclass:27440205 ] ;
+    rdfs:subClassOf
+        [ rdf:type           owl:Restriction ;
+          owl:onProperty     prod:hasContact ;
+          owl:someValuesFrom eclass:27440206 ] .
+
+prod:HanModularConnector
+    rdf:type            owl:Class ;
+    rdfs:label          "Han Modular Connector Assembly"@en ;
+    rdfs:subClassOf     prod:ConnectorAssembly ;
+    rdfs:subClassOf
+        [ rdf:type           owl:Restriction ;
+          owl:onProperty     prod:hasHousing ;
+          owl:someValuesFrom eclass:27440215 ] ;
+    rdfs:subClassOf
+        [ rdf:type           owl:Restriction ;
+          owl:onProperty     prod:hasInsert ;
+          owl:someValuesFrom eclass:27440216 ] .
