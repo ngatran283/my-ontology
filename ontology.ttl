@@ -6,7 +6,7 @@
 @prefix dcterms:<http://purl.org/dc/terms/> .
 @prefix gr:     <http://purl.org/goodrelations/v1#> .
 @prefix schema: <https://schema.org/> .
-@prefix etim:   <https://identifier.buildingsmart.org/uri/etim/etim/9.0/class/> .
+@prefix etim:   <https://identifier.buildingsmart.org/uri/etim/etim/10.0/class/> .
 
 # Your ontology namespace — replace with your GitHub Pages URL
 @prefix prod:   <https://ngatran283.github.io/my-ontology/> .
