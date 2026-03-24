@@ -41,9 +41,7 @@ eclass:27440201
     skos:notation       "27440201" ;
     skos:altLabel       "Steckverbinder"@de ;
     rdfs:subClassOf     prod:IndustrialConnector ;
-    skos:exactMatch     etim:EC000436 ;
-    owl:equivalentClass schema:Product ;
-    owl:equivalentClass gr:ProductOrService .
+    skos:exactMatch     etim:EC000436 .
 
 eclass:27440202
     rdf:type            owl:Class ;
@@ -139,11 +137,32 @@ prod:IndustrialConnector
     owl:equivalentClass gr:ProductOrService ;
     rdfs:subClassOf     gr:SomeItems .
 
+prod:ConnectorAssembly_hasHousing_Restriction
+    rdf:type            owl:Restriction ;
+    rdfs:label          "ConnectorAssembly must have a housing"@en ;
+    owl:onProperty      prod:hasHousing ;
+    owl:someValuesFrom  eclass:27440202 .
+
+prod:ConnectorAssembly_hasInsert_Restriction
+    rdf:type            owl:Restriction ;
+    rdfs:label          "ConnectorAssembly must have an insert"@en ;
+    owl:onProperty      prod:hasInsert ;
+    owl:someValuesFrom  eclass:27440205 .
+
+prod:ConnectorAssembly_hasContact_Restriction
+    rdf:type            owl:Restriction ;
+    rdfs:label          "ConnectorAssembly must have a contact"@en ;
+    owl:onProperty      prod:hasContact ;
+    owl:someValuesFrom  eclass:27440206 .
+
 prod:ConnectorAssembly
     rdf:type            owl:Class ;
     rdfs:label          "Connector Assembly"@en ;
-    rdfs:comment        "A complete assembled connector consisting of required parts."@en ;
-    rdfs:subClassOf     prod:IndustrialConnector .
+    rdfs:comment        "A complete assembled connector. Requires a housing, insert, and contact."@en ;
+    rdfs:subClassOf     prod:IndustrialConnector ;
+    rdfs:subClassOf     prod:ConnectorAssembly_hasHousing_Restriction ;
+    rdfs:subClassOf     prod:ConnectorAssembly_hasInsert_Restriction ;
+    rdfs:subClassOf     prod:ConnectorAssembly_hasContact_Restriction .
 
 
 # ==============================================================
@@ -256,37 +275,66 @@ prod:productSeries
     rdfs:range          xsd:string .
 
 
+
 # ==============================================================
-# ASSEMBLY RESTRICTIONS (OWL)
-# Uses eclass: classes directly — no duplicate prod: classes needed.
+# ASSEMBLY SUBCLASSES
+# HanAConnector and HanModularConnector are subclasses of
+# ConnectorAssembly. They inherit its restrictions and narrow
+# the required part types to their specific eclass classes.
+# Individual products (e.g. prod:Han10A_3pin) are instances of
+# these subclasses.
 # ==============================================================
+
+prod:HanAConnector_hasHousing_Restriction
+    rdf:type            owl:Restriction ;
+    rdfs:label          "HanAConnector must have a Shell (27440202)"@en ;
+    owl:onProperty      prod:hasHousing ;
+    owl:someValuesFrom  eclass:27440202 .
+
+prod:HanAConnector_hasInsert_Restriction
+    rdf:type            owl:Restriction ;
+    rdfs:label          "HanAConnector must have an Insert (27440205)"@en ;
+    owl:onProperty      prod:hasInsert ;
+    owl:someValuesFrom  eclass:27440205 .
+
+prod:HanAConnector_hasContact_Restriction
+    rdf:type            owl:Restriction ;
+    rdfs:label          "HanAConnector must have a Contact (27440206)"@en ;
+    owl:onProperty      prod:hasContact ;
+    owl:someValuesFrom  eclass:27440206 .
 
 prod:HanAConnector
     rdf:type            owl:Class ;
     rdfs:label          "Han A Connector Assembly"@en ;
+    rdfs:comment        "Han A series connector assembly. Requires standard shell (27440202), insert (27440205), and contact (27440206)."@en ;
     rdfs:subClassOf     prod:ConnectorAssembly ;
-    rdfs:subClassOf
-        [ rdf:type           owl:Restriction ;
-          owl:onProperty     prod:hasHousing ;
-          owl:someValuesFrom eclass:27440202 ] ;
-    rdfs:subClassOf
-        [ rdf:type           owl:Restriction ;
-          owl:onProperty     prod:hasInsert ;
-          owl:someValuesFrom eclass:27440205 ] ;
-    rdfs:subClassOf
-        [ rdf:type           owl:Restriction ;
-          owl:onProperty     prod:hasContact ;
-          owl:someValuesFrom eclass:27440206 ] .
+    rdfs:subClassOf     prod:HanAConnector_hasHousing_Restriction ;
+    rdfs:subClassOf     prod:HanAConnector_hasInsert_Restriction ;
+    rdfs:subClassOf     prod:HanAConnector_hasContact_Restriction .
+
+prod:HanModularConnector_hasHousing_Restriction
+    rdf:type            owl:Restriction ;
+    rdfs:label          "HanModularConnector must have a Housing Frame (27440215)"@en ;
+    owl:onProperty      prod:hasHousing ;
+    owl:someValuesFrom  eclass:27440215 .
+
+prod:HanModularConnector_hasInsert_Restriction
+    rdf:type            owl:Restriction ;
+    rdfs:label          "HanModularConnector must have a Frame Module (27440216)"@en ;
+    owl:onProperty      prod:hasInsert ;
+    owl:someValuesFrom  eclass:27440216 .
+
+prod:HanModularConnector_hasContact_Restriction
+    rdf:type            owl:Restriction ;
+    rdfs:label          "HanModularConnector must have a Contact (27440206)"@en ;
+    owl:onProperty      prod:hasContact ;
+    owl:someValuesFrom  eclass:27440206 .
 
 prod:HanModularConnector
     rdf:type            owl:Class ;
     rdfs:label          "Han Modular Connector Assembly"@en ;
+    rdfs:comment        "Han Modular series connector assembly. Requires housing frame (27440215), frame module (27440216), and contact (27440206)."@en ;
     rdfs:subClassOf     prod:ConnectorAssembly ;
-    rdfs:subClassOf
-        [ rdf:type           owl:Restriction ;
-          owl:onProperty     prod:hasHousing ;
-          owl:someValuesFrom eclass:27440215 ] ;
-    rdfs:subClassOf
-        [ rdf:type           owl:Restriction ;
-          owl:onProperty     prod:hasInsert ;
-          owl:someValuesFrom eclass:27440216 ] .
+    rdfs:subClassOf     prod:HanModularConnector_hasHousing_Restriction ;
+    rdfs:subClassOf     prod:HanModularConnector_hasInsert_Restriction ;
+    rdfs:subClassOf     prod:HanModularConnector_hasContact_Restriction .
