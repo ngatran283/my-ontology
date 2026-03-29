@@ -355,7 +355,7 @@ eclass:17130101
     rdfs:label           "Stripping and crimping machine"@en ;
     eclass:hierarchyCode "17130101" ;
     rdfs:subClassOf      eclass:171301 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 17130192  Automatic machine for cable processing (accessories) ---
 eclass:17130192
@@ -363,7 +363,7 @@ eclass:17130192
     rdfs:label           "Automatic machine for cable processing (accessories)"@en ;
     eclass:hierarchyCode "17130192" ;
     rdfs:subClassOf      eclass:171301 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 19150702  Flash memory card ---
 eclass:19150702
@@ -427,7 +427,7 @@ eclass:21049090
     rdfs:label           "Hand tool (other, unspecified)"@en ;
     eclass:hierarchyCode "21049090" ;
     rdfs:subClassOf      eclass:210490 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 23071601  O-ring ---
 eclass:23071601
@@ -435,7 +435,7 @@ eclass:23071601
     rdfs:label           "O-ring"@en ;
     eclass:hierarchyCode "23071601" ;
     rdfs:subClassOf      eclass:230716 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27060106  Energy cable < 1 kV, for moving application ---
 eclass:27060106
@@ -451,7 +451,7 @@ eclass:27060304
     rdfs:label           "Appliance cord (data cable)"@en ;
     eclass:hierarchyCode "27060304" ;
     rdfs:subClassOf      eclass:270603 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27060307  Bus cable ---
 eclass:27060307
@@ -459,7 +459,7 @@ eclass:27060307
     rdfs:label           "Bus cable"@en ;
     eclass:hierarchyCode "27060307" ;
     rdfs:subClassOf      eclass:270603 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27060308  Patch cord copper (data cable) ---
 eclass:27060308
@@ -483,7 +483,7 @@ eclass:27060314
     rdfs:label           "Network adapter"@en ;
     eclass:hierarchyCode "27060314" ;
     rdfs:subClassOf      eclass:270603 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27060327  Assembled power cable ---
 eclass:27060327
@@ -499,7 +499,7 @@ eclass:27060390
     rdfs:label           "Ready-made data cable (unspecified)"@en ;
     eclass:hierarchyCode "27060390" ;
     rdfs:subClassOf      eclass:270603 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27060490  Ready-made low-voltage line (unspecified) ---
 eclass:27060490
@@ -507,7 +507,7 @@ eclass:27060490
     rdfs:label           "Ready-made low-voltage line (unspecified)"@en ;
     eclass:hierarchyCode "27060490" ;
     rdfs:subClassOf      eclass:270604 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27060501  Hybrid cable ---
 eclass:27060501
@@ -523,7 +523,7 @@ eclass:27061003
     rdfs:label           "Patch cable fiber-optic"@en ;
     eclass:hierarchyCode "27061003" ;
     rdfs:subClassOf      eclass:270610 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27061801  Data and communication cable (copper) ---
 eclass:27061801
@@ -531,7 +531,7 @@ eclass:27061801
     rdfs:label           "Data and communication cable (copper)"@en ;
     eclass:hierarchyCode "27061801" ;
     rdfs:subClassOf      eclass:270618 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27061803  Fiber optic cable ---
 eclass:27061803
@@ -539,7 +539,7 @@ eclass:27061803
     rdfs:label           "Fiber optic cable"@en ;
     eclass:hierarchyCode "27061803" ;
     rdfs:subClassOf      eclass:270618 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27110390  Luminaire (unspecified) ---
 eclass:27110390
@@ -547,7 +547,7 @@ eclass:27110390
     rdfs:label           "Luminaire (unspecified)"@en ;
     eclass:hierarchyCode "27110390" ;
     rdfs:subClassOf      eclass:271103 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27110643  Lamp for medical applications ---
 eclass:27110643
@@ -619,7 +619,7 @@ eclass:27142409
     rdfs:label           "Small distribution board"@en ;
     eclass:hierarchyCode "27142409" ;
     rdfs:subClassOf      eclass:271424 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27144042  Plug socket ---
 eclass:27144042
@@ -627,7 +627,7 @@ eclass:27144042
     rdfs:label           "Plug socket"@en ;
     eclass:hierarchyCode "27144042" ;
     rdfs:subClassOf      eclass:271440 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27144705  Charging cable E-Mobility ---
 eclass:27144705
@@ -667,7 +667,7 @@ eclass:27210902
     rdfs:label           "Current transformer"@en ;
     eclass:hierarchyCode "27210902" ;
     rdfs:subClassOf      eclass:272109 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27211011  Power supply unit ---
 eclass:27211011
@@ -683,7 +683,7 @@ eclass:27371207
     rdfs:label           "Protective cover for command devices"@en ;
     eclass:hierarchyCode "27371207" ;
     rdfs:subClassOf      eclass:273712 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27371209  Bulb socket block for command and alarm devices ---
 eclass:27371209
@@ -691,7 +691,7 @@ eclass:27371209
     rdfs:label           "Bulb socket block for command and alarm devices"@en ;
     eclass:hierarchyCode "27371209" ;
     rdfs:subClassOf      eclass:273712 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27371210  Front element for push-button actuators ---
 eclass:27371210
@@ -699,7 +699,7 @@ eclass:27371210
     rdfs:label           "Front element for push-button actuators"@en ;
     eclass:hierarchyCode "27371210" ;
     rdfs:subClassOf      eclass:273712 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27371211  Front element for warning lights ---
 eclass:27371211
@@ -707,7 +707,7 @@ eclass:27371211
     rdfs:label           "Front element for warning lights"@en ;
     eclass:hierarchyCode "27371211" ;
     rdfs:subClassOf      eclass:273712 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27371212  Front element for mushroom push-button actuators ---
 eclass:27371212
@@ -715,7 +715,7 @@ eclass:27371212
     rdfs:label           "Front element for mushroom push-button actuators"@en ;
     eclass:hierarchyCode "27371212" ;
     rdfs:subClassOf      eclass:273712 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27371213  Front element for selector switches ---
 eclass:27371213
@@ -723,7 +723,7 @@ eclass:27371213
     rdfs:label           "Front element for selector switches"@en ;
     eclass:hierarchyCode "27371213" ;
     rdfs:subClassOf      eclass:273712 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27371225  Identification plate for command devices ---
 eclass:27371225
@@ -731,7 +731,7 @@ eclass:27371225
     rdfs:label           "Identification plate for command devices"@en ;
     eclass:hierarchyCode "27371225" ;
     rdfs:subClassOf      eclass:273712 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27371226  Adapter for command devices ---
 eclass:27371226
@@ -739,7 +739,7 @@ eclass:27371226
     rdfs:label           "Adapter for command devices"@en ;
     eclass:hierarchyCode "27371226" ;
     rdfs:subClassOf      eclass:273712 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27371231  Dome, refractor ---
 eclass:27371231
@@ -747,7 +747,7 @@ eclass:27371231
     rdfs:label           "Dome, refractor"@en ;
     eclass:hierarchyCode "27371231" ;
     rdfs:subClassOf      eclass:273712 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27371242  Front bezel pushbutton ---
 eclass:27371242
@@ -763,7 +763,7 @@ eclass:27371302
     rdfs:label           "Auxiliary switch block"@en ;
     eclass:hierarchyCode "27371302" ;
     rdfs:subClassOf      eclass:273713 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27440103  Sensor-actuator connector chassis ---
 eclass:27440103
@@ -795,7 +795,7 @@ eclass:27440113
     rdfs:label           "Rectangular connectors (set)"@en ;
     eclass:hierarchyCode "27440113" ;
     rdfs:subClassOf      eclass:274401 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27440114  Rectangular connector (for field assembly) ---
 eclass:27440114
@@ -811,7 +811,7 @@ eclass:27440115
     rdfs:label           "Circular connector (set)"@en ;
     eclass:hierarchyCode "27440115" ;
     rdfs:subClassOf      eclass:274401 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27440116  Circular connector (for field assembly) ---
 eclass:27440116
@@ -971,7 +971,7 @@ eclass:27440291
     rdfs:label           "Connector component (parts)"@en ;
     eclass:hierarchyCode "27440291" ;
     rdfs:subClassOf      eclass:274402 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27440292  Connector component (accessories) ---
 eclass:27440292
@@ -995,7 +995,7 @@ eclass:27440305
     rdfs:label           "FO connector"@en ;
     eclass:hierarchyCode "27440305" ;
     rdfs:subClassOf      eclass:274403 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27440313  Test plug ---
 eclass:27440313
@@ -1011,7 +1011,7 @@ eclass:27440392
     rdfs:label           "Connector (accessories)"@en ;
     eclass:hierarchyCode "27440392" ;
     rdfs:subClassOf      eclass:274403 ;
-    rdfs:subClassOf      gr:ProductOrService ;
+    rdfs:subClassOf      gr:ProductOrService  .
 
 # --- 27460201  PCB connector (board connector) ---
 eclass:27460201
