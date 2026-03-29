@@ -6,197 +6,1127 @@
 @prefix dcterms:<http://purl.org/dc/terms/> .
 @prefix gr:     <http://purl.org/goodrelations/v1#> .
 @prefix schema: <https://schema.org/> .
-@prefix etim:   <https://identifier.buildingsmart.org/uri/etim/etim/10.0/class/> .
-
-# Your ontology namespace — replace with your GitHub Pages URL
 @prefix prod:   <https://ngatran283.github.io/my-ontology/> .
-
-# Self-hosted ECLASS 11.0 subset for industrial connectors
 @prefix eclass: <https://ngatran283.github.io/my-ontology/eclass/> .
 
-
 # ==============================================================
-# ONTOLOGY DECLARATION
-# ==============================================================
-
-<https://ngatran283.github.io/my-ontology/>
-    rdf:type            owl:Ontology ;
-    rdfs:label          "Industrial Connector Product Ontology"@en ;
-    rdfs:comment        "Ontology for industrial electrical connectors. ECLASS 11.0 subset self-hosted. Maps to ETIM (via bSDD), GoodRelations, and schema.org."@en ;
-    dcterms:creator     "Nga Tran" ;
-    dcterms:subject     "Industrial connectors, product ontology, ECLASS, ETIM, UNSPSC" ;
-    owl:versionInfo     "1.0" .
-
-
-# ==============================================================
-# ECLASS 11.0 — Self-hosted subset
-# Product taxonomy. Each class links to the official ETIM
-# class on bSDD via skos:exactMatch.
+# SEGMENTS  (2-digit)
 # ==============================================================
 
+eclass:17
+    rdf:type             owl:Class ;
+    rdfs:label           "Machine, device (for special applications) [Segment 17]"@en ;
+    eclass:hierarchyCode "17" ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+eclass:19
+    rdf:type             owl:Class ;
+    rdfs:label           "Information, communication and media technology [Segment 19]"@en ;
+    eclass:hierarchyCode "19" ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+eclass:21
+    rdf:type             owl:Class ;
+    rdfs:label           "Tool [Segment 21]"@en ;
+    eclass:hierarchyCode "21" ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+eclass:23
+    rdf:type             owl:Class ;
+    rdfs:label           "Machine element, fixing, mounting [Segment 23]"@en ;
+    eclass:hierarchyCode "23" ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+eclass:27
+    rdf:type             owl:Class ;
+    rdfs:label           "Electric engineering, automation, process control engineering [Segment 27]"@en ;
+    eclass:hierarchyCode "27" ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+eclass:90
+    rdf:type             owl:Class ;
+    rdfs:label           "Unclassified / interim classification [Segment 90]"@en ;
+    eclass:hierarchyCode "90" ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+
+# ==============================================================
+# MAIN GROUPS  (4-digit)
+# ==============================================================
+
+eclass:1713
+    rdf:type             owl:Class ;
+    rdfs:label           "Automatic machines for electric trade"@en ;
+    eclass:hierarchyCode "1713" ;
+    rdfs:subClassOf      eclass:17 .
+
+eclass:1915
+    rdf:type             owl:Class ;
+    rdfs:label           "Data storage media"@en ;
+    eclass:hierarchyCode "1915" ;
+    rdfs:subClassOf      eclass:19 .
+
+eclass:1917
+    rdf:type             owl:Class ;
+    rdfs:label           "Network components"@en ;
+    eclass:hierarchyCode "1917" ;
+    rdfs:subClassOf      eclass:19 .
+
+eclass:2101
+    rdf:type             owl:Class ;
+    rdfs:label           "Abrasive and polishing tools"@en ;
+    eclass:hierarchyCode "2101" ;
+    rdfs:subClassOf      eclass:21 .
+
+eclass:2104
+    rdf:type             owl:Class ;
+    rdfs:label           "Hand tools"@en ;
+    eclass:hierarchyCode "2104" ;
+    rdfs:subClassOf      eclass:21 .
+
+eclass:2307
+    rdf:type             owl:Class ;
+    rdfs:label           "Seal"@en ;
+    eclass:hierarchyCode "2307" ;
+    rdfs:subClassOf      eclass:23 .
+
+eclass:2706
+    rdf:type             owl:Class ;
+    rdfs:label           "Cable, wire"@en ;
+    eclass:hierarchyCode "2706" ;
+    rdfs:subClassOf      eclass:27 .
+
+eclass:2711
+    rdf:type             owl:Class ;
+    rdfs:label           "Lighting installation, device"@en ;
+    eclass:hierarchyCode "2711" ;
+    rdfs:subClassOf      eclass:27 .
+
+eclass:2714
+    rdf:type             owl:Class ;
+    rdfs:label           "Electrical installation, appliance"@en ;
+    eclass:hierarchyCode "2714" ;
+    rdfs:subClassOf      eclass:27 .
+
+eclass:2718
+    rdf:type             owl:Class ;
+    rdfs:label           "Control box, rack, housing, sub-rack"@en ;
+    eclass:hierarchyCode "2718" ;
+    rdfs:subClassOf      eclass:27 .
+
+eclass:2721
+    rdf:type             owl:Class ;
+    rdfs:label           "Signal processing"@en ;
+    eclass:hierarchyCode "2721" ;
+    rdfs:subClassOf      eclass:27 .
+
+eclass:2737
+    rdf:type             owl:Class ;
+    rdfs:label           "Low-voltage circuitry"@en ;
+    eclass:hierarchyCode "2737" ;
+    rdfs:subClassOf      eclass:27 .
+
+eclass:2744
+    rdf:type             owl:Class ;
+    rdfs:label           "Connecting technology / Connectors"@en ;
+    eclass:hierarchyCode "2744" ;
+    rdfs:subClassOf      eclass:27 .
+
+eclass:2746
+    rdf:type             owl:Class ;
+    rdfs:label           "PCB connection technology"@en ;
+    eclass:hierarchyCode "2746" ;
+    rdfs:subClassOf      eclass:27 .
+
+eclass:9090
+    rdf:type             owl:Class ;
+    rdfs:label           "Unclassified"@en ;
+    eclass:hierarchyCode "9090" ;
+    rdfs:subClassOf      eclass:90 .
+
+
+# ==============================================================
+# GROUPS  (6-digit)
+# ==============================================================
+
+eclass:171301
+    rdf:type             owl:Class ;
+    rdfs:label           "Automatic machine for cable processing"@en ;
+    eclass:hierarchyCode "171301" ;
+    rdfs:subClassOf      eclass:1713 .
+
+eclass:191507
+    rdf:type             owl:Class ;
+    rdfs:label           "Flash / solid-state memory"@en ;
+    eclass:hierarchyCode "191507" ;
+    rdfs:subClassOf      eclass:1915 .
+
+eclass:191701
+    rdf:type             owl:Class ;
+    rdfs:label           "Network devices"@en ;
+    eclass:hierarchyCode "191701" ;
+    rdfs:subClassOf      eclass:1917 .
+
+eclass:191790
+    rdf:type             owl:Class ;
+    rdfs:label           "Network technology (unspecified)"@en ;
+    eclass:hierarchyCode "191790" ;
+    rdfs:subClassOf      eclass:1917 .
+
+eclass:210113
+    rdf:type             owl:Class ;
+    rdfs:label           "Abrasive material"@en ;
+    eclass:hierarchyCode "210113" ;
+    rdfs:subClassOf      eclass:2101 .
+
+eclass:210126
+    rdf:type             owl:Class ;
+    rdfs:label           "Sanding and polishing tools"@en ;
+    eclass:hierarchyCode "210126" ;
+    rdfs:subClassOf      eclass:2101 .
+
+eclass:210438
+    rdf:type             owl:Class ;
+    rdfs:label           "Crimping and cutting tools"@en ;
+    eclass:hierarchyCode "210438" ;
+    rdfs:subClassOf      eclass:2104 .
+
+eclass:210490
+    rdf:type             owl:Class ;
+    rdfs:label           "Hand tool (other)"@en ;
+    eclass:hierarchyCode "210490" ;
+    rdfs:subClassOf      eclass:2104 .
+
+eclass:230716
+    rdf:type             owl:Class ;
+    rdfs:label           "O-rings and sealing rings"@en ;
+    eclass:hierarchyCode "230716" ;
+    rdfs:subClassOf      eclass:2307 .
+
+eclass:270601
+    rdf:type             owl:Class ;
+    rdfs:label           "Assembled cables and lines"@en ;
+    eclass:hierarchyCode "270601" ;
+    rdfs:subClassOf      eclass:2706 .
+
+eclass:270603
+    rdf:type             owl:Class ;
+    rdfs:label           "Ready-made data cable"@en ;
+    eclass:hierarchyCode "270603" ;
+    rdfs:subClassOf      eclass:2706 .
+
+eclass:270604
+    rdf:type             owl:Class ;
+    rdfs:label           "Ready-made power line"@en ;
+    eclass:hierarchyCode "270604" ;
+    rdfs:subClassOf      eclass:2706 .
+
+eclass:270605
+    rdf:type             owl:Class ;
+    rdfs:label           "Hybrid cables"@en ;
+    eclass:hierarchyCode "270605" ;
+    rdfs:subClassOf      eclass:2706 .
+
+eclass:270610
+    rdf:type             owl:Class ;
+    rdfs:label           "Ready-made optical fiber cable"@en ;
+    eclass:hierarchyCode "270610" ;
+    rdfs:subClassOf      eclass:2706 .
+
+eclass:270618
+    rdf:type             owl:Class ;
+    rdfs:label           "Communication cable"@en ;
+    eclass:hierarchyCode "270618" ;
+    rdfs:subClassOf      eclass:2706 .
+
+eclass:271103
+    rdf:type             owl:Class ;
+    rdfs:label           "Interior light"@en ;
+    eclass:hierarchyCode "271103" ;
+    rdfs:subClassOf      eclass:2711 .
+
+eclass:271106
+    rdf:type             owl:Class ;
+    rdfs:label           "Light medium"@en ;
+    eclass:hierarchyCode "271106" ;
+    rdfs:subClassOf      eclass:2711 .
+
+eclass:271408
+    rdf:type             owl:Class ;
+    rdfs:label           "Cable glands and conduit fittings"@en ;
+    eclass:hierarchyCode "271408" ;
+    rdfs:subClassOf      eclass:2714 .
+
+eclass:271424
+    rdf:type             owl:Class ;
+    rdfs:label           "Small distribution board"@en ;
+    eclass:hierarchyCode "271424" ;
+    rdfs:subClassOf      eclass:2714 .
+
+eclass:271440
+    rdf:type             owl:Class ;
+    rdfs:label           "Installation switch set"@en ;
+    eclass:hierarchyCode "271440" ;
+    rdfs:subClassOf      eclass:2714 .
+
+eclass:271447
+    rdf:type             owl:Class ;
+    rdfs:label           "Charging components (E-Mobility)"@en ;
+    eclass:hierarchyCode "271447" ;
+    rdfs:subClassOf      eclass:2714 .
+
+eclass:271828
+    rdf:type             owl:Class ;
+    rdfs:label           "Control cabinet / housing elements"@en ;
+    eclass:hierarchyCode "271828" ;
+    rdfs:subClassOf      eclass:2718 .
+
+eclass:272109
+    rdf:type             owl:Class ;
+    rdfs:label           "Transformer"@en ;
+    eclass:hierarchyCode "272109" ;
+    rdfs:subClassOf      eclass:2721 .
+
+eclass:272110
+    rdf:type             owl:Class ;
+    rdfs:label           "Power supply units"@en ;
+    eclass:hierarchyCode "272110" ;
+    rdfs:subClassOf      eclass:2721 .
+
+eclass:273712
+    rdf:type             owl:Class ;
+    rdfs:label           "Control/signaling switch"@en ;
+    eclass:hierarchyCode "273712" ;
+    rdfs:subClassOf      eclass:2737 .
+
+eclass:273713
+    rdf:type             owl:Class ;
+    rdfs:label           "Component for low-voltage switching technology"@en ;
+    eclass:hierarchyCode "273713" ;
+    rdfs:subClassOf      eclass:2737 .
+
+eclass:274401
+    rdf:type             owl:Class ;
+    rdfs:label           "Sensor-actuator connectors"@en ;
+    eclass:hierarchyCode "274401" ;
+    rdfs:subClassOf      eclass:2744 .
+
+eclass:274402
+    rdf:type             owl:Class ;
+    rdfs:label           "Industrial connectors (complete components)"@en ;
+    eclass:hierarchyCode "274402" ;
+    rdfs:subClassOf      eclass:2744 .
+
+eclass:274403
+    rdf:type             owl:Class ;
+    rdfs:label           "Connectors (general)"@en ;
+    eclass:hierarchyCode "274403" ;
+    rdfs:subClassOf      eclass:2744 .
+
+eclass:274602
+    rdf:type             owl:Class ;
+    rdfs:label           "PCB connectors"@en ;
+    eclass:hierarchyCode "274602" ;
+    rdfs:subClassOf      eclass:2746 .
+
+eclass:274690
+    rdf:type             owl:Class ;
+    rdfs:label           "PCB connection technology (unspecified)"@en ;
+    eclass:hierarchyCode "274690" ;
+    rdfs:subClassOf      eclass:2746 .
+
+eclass:909090
+    rdf:type             owl:Class ;
+    rdfs:label           "Interim classification"@en ;
+    eclass:hierarchyCode "909090" ;
+    rdfs:subClassOf      eclass:9090 .
+
+
+# ==============================================================
+# LEAF CLASSES  (8-digit)
+# One class per eCLASS product code — taxonomy + generic merged.
+# skos:exactMatch  = same numeric code in eClassOWL 5.1.4
+# skos:closeMatch  = same/similar label, different code
+# ==============================================================
+
+# --- 17130101  Stripping and crimping machine ---
+eclass:17130101
+    rdf:type             owl:Class ;
+    rdfs:label           "Stripping and crimping machine"@en ;
+    eclass:hierarchyCode "17130101" ;
+    rdfs:subClassOf      eclass:171301 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 17130192  Automatic machine for cable processing (accessories) ---
+eclass:17130192
+    rdf:type             owl:Class ;
+    rdfs:label           "Automatic machine for cable processing (accessories)"@en ;
+    eclass:hierarchyCode "17130192" ;
+    rdfs:subClassOf      eclass:171301 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 19150702  Flash memory card ---
+eclass:19150702
+    rdf:type             owl:Class ;
+    rdfs:label           "Flash memory card"@en ;
+    eclass:hierarchyCode "19150702" ;
+    rdfs:subClassOf      eclass:191507 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 19170130  Network switch (general application) ---
+eclass:19170130
+    rdf:type             owl:Class ;
+    rdfs:label           "Network switch (general application)"@en ;
+    eclass:hierarchyCode "19170130" ;
+    rdfs:subClassOf      eclass:191701 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 19179090  Network technology (computer communication, parts, unspecified) ---
+eclass:19179090
+    rdf:type             owl:Class ;
+    rdfs:label           "Network technology (computer communication, parts, unspecified)"@en ;
+    eclass:hierarchyCode "19179090" ;
+    rdfs:subClassOf      eclass:191790 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 21011379  Fiber optic polishing emery cloth ---
+eclass:21011379
+    rdf:type             owl:Class ;
+    rdfs:label           "Fiber optic polishing emery cloth"@en ;
+    eclass:hierarchyCode "21011379" ;
+    rdfs:subClassOf      eclass:210113 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 21012692  Special purpose sanding tool (accessories) ---
+eclass:21012692
+    rdf:type             owl:Class ;
+    rdfs:label           "Special purpose sanding tool (accessories)"@en ;
+    eclass:hierarchyCode "21012692" ;
+    rdfs:subClassOf      eclass:210126 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 21043811  Crimping pliers ---
+eclass:21043811
+    rdf:type             owl:Class ;
+    rdfs:label           "Crimping pliers"@en ;
+    eclass:hierarchyCode "21043811" ;
+    rdfs:subClassOf      eclass:210438 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 21043852  Insert for crimp tool ---
+eclass:21043852
+    rdf:type             owl:Class ;
+    rdfs:label           "Insert for crimp tool"@en ;
+    eclass:hierarchyCode "21043852" ;
+    rdfs:subClassOf      eclass:210438 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 21049090  Hand tool (other, unspecified) ---
+eclass:21049090
+    rdf:type             owl:Class ;
+    rdfs:label           "Hand tool (other, unspecified)"@en ;
+    eclass:hierarchyCode "21049090" ;
+    rdfs:subClassOf      eclass:210490 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 23071601  O-ring ---
+eclass:23071601
+    rdf:type             owl:Class ;
+    rdfs:label           "O-ring"@en ;
+    eclass:hierarchyCode "23071601" ;
+    rdfs:subClassOf      eclass:230716 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27060106  Energy cable < 1 kV, for moving application ---
+eclass:27060106
+    rdf:type             owl:Class ;
+    rdfs:label           "Energy cable < 1 kV, for moving application"@en ;
+    eclass:hierarchyCode "27060106" ;
+    rdfs:subClassOf      eclass:270601 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27060304  Appliance cord (data cable) ---
+eclass:27060304
+    rdf:type             owl:Class ;
+    rdfs:label           "Appliance cord (data cable)"@en ;
+    eclass:hierarchyCode "27060304" ;
+    rdfs:subClassOf      eclass:270603 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27060307  Bus cable ---
+eclass:27060307
+    rdf:type             owl:Class ;
+    rdfs:label           "Bus cable"@en ;
+    eclass:hierarchyCode "27060307" ;
+    rdfs:subClassOf      eclass:270603 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27060308  Patch cord copper (data cable) ---
+eclass:27060308
+    rdf:type             owl:Class ;
+    rdfs:label           "Patch cord copper (data cable)"@en ;
+    eclass:hierarchyCode "27060308" ;
+    rdfs:subClassOf      eclass:270603 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27060311  Assembled sensor actuator-line ---
+eclass:27060311
+    rdf:type             owl:Class ;
+    rdfs:label           "Assembled sensor actuator-line"@en ;
+    eclass:hierarchyCode "27060311" ;
+    rdfs:subClassOf      eclass:270603 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27060314  Network adapter ---
+eclass:27060314
+    rdf:type             owl:Class ;
+    rdfs:label           "Network adapter"@en ;
+    eclass:hierarchyCode "27060314" ;
+    rdfs:subClassOf      eclass:270603 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27060327  Assembled power cable ---
+eclass:27060327
+    rdf:type             owl:Class ;
+    rdfs:label           "Assembled power cable"@en ;
+    eclass:hierarchyCode "27060327" ;
+    rdfs:subClassOf      eclass:270603 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27060390  Ready-made data cable (unspecified) ---
+eclass:27060390
+    rdf:type             owl:Class ;
+    rdfs:label           "Ready-made data cable (unspecified)"@en ;
+    eclass:hierarchyCode "27060390" ;
+    rdfs:subClassOf      eclass:270603 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27060490  Ready-made low-voltage line (unspecified) ---
+eclass:27060490
+    rdf:type             owl:Class ;
+    rdfs:label           "Ready-made low-voltage line (unspecified)"@en ;
+    eclass:hierarchyCode "27060490" ;
+    rdfs:subClassOf      eclass:270604 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27060501  Hybrid cable ---
+eclass:27060501
+    rdf:type             owl:Class ;
+    rdfs:label           "Hybrid cable"@en ;
+    eclass:hierarchyCode "27060501" ;
+    rdfs:subClassOf      eclass:270605 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27061003  Patch cable fiber-optic ---
+eclass:27061003
+    rdf:type             owl:Class ;
+    rdfs:label           "Patch cable fiber-optic"@en ;
+    eclass:hierarchyCode "27061003" ;
+    rdfs:subClassOf      eclass:270610 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27061801  Data and communication cable (copper) ---
+eclass:27061801
+    rdf:type             owl:Class ;
+    rdfs:label           "Data and communication cable (copper)"@en ;
+    eclass:hierarchyCode "27061801" ;
+    rdfs:subClassOf      eclass:270618 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27061803  Fiber optic cable ---
+eclass:27061803
+    rdf:type             owl:Class ;
+    rdfs:label           "Fiber optic cable"@en ;
+    eclass:hierarchyCode "27061803" ;
+    rdfs:subClassOf      eclass:270618 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27110390  Luminaire (unspecified) ---
+eclass:27110390
+    rdf:type             owl:Class ;
+    rdfs:label           "Luminaire (unspecified)"@en ;
+    eclass:hierarchyCode "27110390" ;
+    rdfs:subClassOf      eclass:271103 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27110643  Lamp for medical applications ---
+eclass:27110643
+    rdf:type             owl:Class ;
+    rdfs:label           "Lamp for medical applications"@en ;
+    eclass:hierarchyCode "27110643" ;
+    rdfs:subClassOf      eclass:271106 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27140801  Screwed cable gland (electrical) ---
+eclass:27140801
+    rdf:type             owl:Class ;
+    rdfs:label           "Screwed cable gland (electrical)"@en ;
+    eclass:hierarchyCode "27140801" ;
+    rdfs:subClassOf      eclass:271408 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27140802  Screwed cable gland (explosion-proof, electrical) ---
+eclass:27140802
+    rdf:type             owl:Class ;
+    rdfs:label           "Screwed cable gland (explosion-proof, electrical)"@en ;
+    eclass:hierarchyCode "27140802" ;
+    rdfs:subClassOf      eclass:271408 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27140803  Cable gland EMC (electrical installation) ---
+eclass:27140803
+    rdf:type             owl:Class ;
+    rdfs:label           "Cable gland EMC (electrical installation)"@en ;
+    eclass:hierarchyCode "27140803" ;
+    rdfs:subClassOf      eclass:271408 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27140805  Blind plug (explosion-proof, electrical) ---
+eclass:27140805
+    rdf:type             owl:Class ;
+    rdfs:label           "Blind plug (explosion-proof, electrical)"@en ;
+    eclass:hierarchyCode "27140805" ;
+    rdfs:subClassOf      eclass:271408 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27140806  Enlargement/reducing ring (electric) ---
+eclass:27140806
+    rdf:type             owl:Class ;
+    rdfs:label           "Enlargement/reducing ring (electric)"@en ;
+    eclass:hierarchyCode "27140806" ;
+    rdfs:subClassOf      eclass:271408 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27140807  Additional components cable gland ---
+eclass:27140807
+    rdf:type             owl:Class ;
+    rdfs:label           "Additional components cable gland"@en ;
+    eclass:hierarchyCode "27140807" ;
+    rdfs:subClassOf      eclass:271408 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27140890  Cable gland (unspecified) ---
+eclass:27140890
+    rdf:type             owl:Class ;
+    rdfs:label           "Cable gland (unspecified)"@en ;
+    eclass:hierarchyCode "27140890" ;
+    rdfs:subClassOf      eclass:271408 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27142409  Small distribution board ---
+eclass:27142409
+    rdf:type             owl:Class ;
+    rdfs:label           "Small distribution board"@en ;
+    eclass:hierarchyCode "27142409" ;
+    rdfs:subClassOf      eclass:271424 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27144042  Plug socket ---
+eclass:27144042
+    rdf:type             owl:Class ;
+    rdfs:label           "Plug socket"@en ;
+    eclass:hierarchyCode "27144042" ;
+    rdfs:subClassOf      eclass:271440 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27144705  Charging cable E-Mobility ---
+eclass:27144705
+    rdf:type             owl:Class ;
+    rdfs:label           "Charging cable E-Mobility"@en ;
+    eclass:hierarchyCode "27144705" ;
+    rdfs:subClassOf      eclass:271447 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27144792  Charging components E-Mobility (accessories) ---
+eclass:27144792
+    rdf:type             owl:Class ;
+    rdfs:label           "Charging components E-Mobility (accessories)"@en ;
+    eclass:hierarchyCode "27144792" ;
+    rdfs:subClassOf      eclass:271447 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27182810  Cover/infill panel/identification strip (electrical cabinet) ---
+eclass:27182810
+    rdf:type             owl:Class ;
+    rdfs:label           "Cover/infill panel/identification strip (electrical cabinet)"@en ;
+    eclass:hierarchyCode "27182810" ;
+    rdfs:subClassOf      eclass:271828 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27182890  Elements for switching cabinet, housing, rack (unspecified) ---
+eclass:27182890
+    rdf:type             owl:Class ;
+    rdfs:label           "Elements for switching cabinet, housing, rack (unspecified)"@en ;
+    eclass:hierarchyCode "27182890" ;
+    rdfs:subClassOf      eclass:271828 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27210902  Current transformer ---
+eclass:27210902
+    rdf:type             owl:Class ;
+    rdfs:label           "Current transformer"@en ;
+    eclass:hierarchyCode "27210902" ;
+    rdfs:subClassOf      eclass:272109 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27211011  Power supply unit ---
+eclass:27211011
+    rdf:type             owl:Class ;
+    rdfs:label           "Power supply unit"@en ;
+    eclass:hierarchyCode "27211011" ;
+    rdfs:subClassOf      eclass:272110 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27371207  Protective cover for command devices ---
+eclass:27371207
+    rdf:type             owl:Class ;
+    rdfs:label           "Protective cover for command devices"@en ;
+    eclass:hierarchyCode "27371207" ;
+    rdfs:subClassOf      eclass:273712 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27371209  Bulb socket block for command and alarm devices ---
+eclass:27371209
+    rdf:type             owl:Class ;
+    rdfs:label           "Bulb socket block for command and alarm devices"@en ;
+    eclass:hierarchyCode "27371209" ;
+    rdfs:subClassOf      eclass:273712 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27371210  Front element for push-button actuators ---
+eclass:27371210
+    rdf:type             owl:Class ;
+    rdfs:label           "Front element for push-button actuators"@en ;
+    eclass:hierarchyCode "27371210" ;
+    rdfs:subClassOf      eclass:273712 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27371211  Front element for warning lights ---
+eclass:27371211
+    rdf:type             owl:Class ;
+    rdfs:label           "Front element for warning lights"@en ;
+    eclass:hierarchyCode "27371211" ;
+    rdfs:subClassOf      eclass:273712 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27371212  Front element for mushroom push-button actuators ---
+eclass:27371212
+    rdf:type             owl:Class ;
+    rdfs:label           "Front element for mushroom push-button actuators"@en ;
+    eclass:hierarchyCode "27371212" ;
+    rdfs:subClassOf      eclass:273712 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27371213  Front element for selector switches ---
+eclass:27371213
+    rdf:type             owl:Class ;
+    rdfs:label           "Front element for selector switches"@en ;
+    eclass:hierarchyCode "27371213" ;
+    rdfs:subClassOf      eclass:273712 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27371225  Identification plate for command devices ---
+eclass:27371225
+    rdf:type             owl:Class ;
+    rdfs:label           "Identification plate for command devices"@en ;
+    eclass:hierarchyCode "27371225" ;
+    rdfs:subClassOf      eclass:273712 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27371226  Adapter for command devices ---
+eclass:27371226
+    rdf:type             owl:Class ;
+    rdfs:label           "Adapter for command devices"@en ;
+    eclass:hierarchyCode "27371226" ;
+    rdfs:subClassOf      eclass:273712 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27371231  Dome, refractor ---
+eclass:27371231
+    rdf:type             owl:Class ;
+    rdfs:label           "Dome, refractor"@en ;
+    eclass:hierarchyCode "27371231" ;
+    rdfs:subClassOf      eclass:273712 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27371242  Front bezel pushbutton ---
+eclass:27371242
+    rdf:type             owl:Class ;
+    rdfs:label           "Front bezel pushbutton"@en ;
+    eclass:hierarchyCode "27371242" ;
+    rdfs:subClassOf      eclass:273712 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27371302  Auxiliary switch block ---
+eclass:27371302
+    rdf:type             owl:Class ;
+    rdfs:label           "Auxiliary switch block"@en ;
+    eclass:hierarchyCode "27371302" ;
+    rdfs:subClassOf      eclass:273713 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27440103  Sensor-actuator connector chassis ---
+eclass:27440103
+    rdf:type             owl:Class ;
+    rdfs:label           "Sensor-actuator connector chassis (sensor technology actuator)"@en ;
+    eclass:hierarchyCode "27440103" ;
+    rdfs:subClassOf      eclass:274401 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440108  Passive Sensor-Actuator-Interface (with cable) ---
+eclass:27440108
+    rdf:type             owl:Class ;
+    rdfs:label           "Passive Sensor-Actuator-Interface (with cable)"@en ;
+    eclass:hierarchyCode "27440108" ;
+    rdfs:subClassOf      eclass:274401 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440110  Circular connector, mounting (PCB) ---
+eclass:27440110
+    rdf:type             owl:Class ;
+    rdfs:label           "Circular connector, mounting (PCB)"@en ;
+    eclass:hierarchyCode "27440110" ;
+    rdfs:subClassOf      eclass:274401 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440113  Rectangular connectors (set) ---
+eclass:27440113
+    rdf:type             owl:Class ;
+    rdfs:label           "Rectangular connectors (set)"@en ;
+    eclass:hierarchyCode "27440113" ;
+    rdfs:subClassOf      eclass:274401 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27440114  Rectangular connector (for field assembly) ---
+eclass:27440114
+    rdf:type             owl:Class ;
+    rdfs:label           "Rectangular connector (for field assembly)"@en ;
+    eclass:hierarchyCode "27440114" ;
+    rdfs:subClassOf      eclass:274401 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440115  Circular connector (set) ---
+eclass:27440115
+    rdf:type             owl:Class ;
+    rdfs:label           "Circular connector (set)"@en ;
+    eclass:hierarchyCode "27440115" ;
+    rdfs:subClassOf      eclass:274401 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27440116  Circular connector (for field assembly) ---
+eclass:27440116
+    rdf:type             owl:Class ;
+    rdfs:label           "Circular connector (for field assembly)"@en ;
+    eclass:hierarchyCode "27440116" ;
+    rdfs:subClassOf      eclass:274401 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440190  Industry connector (unspecified) ---
+eclass:27440190
+    rdf:type             owl:Class ;
+    rdfs:label           "Industry connector (unspecified)"@en ;
+    eclass:hierarchyCode "27440190" ;
+    rdfs:subClassOf      eclass:274401 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440201  Adapter plate industrial connectors ---
 eclass:27440201
-    rdf:type            owl:Class ;
-    rdfs:label          "Industrial connector complete"@en ;
-    rdfs:comment        "A complete industrial electrical connector."@en ;
-    skos:notation       "27440201" ;
-    skos:altLabel       "Steckverbinder"@de ;
-    rdfs:subClassOf     prod:IndustrialConnector ;
-    skos:exactMatch     etim:EC000436 .
+    rdf:type             owl:Class ;
+    rdfs:label           "Adapter plate industrial connectors"@en ;
+    eclass:hierarchyCode "27440201" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
 
+# --- 27440202  Shell for industrial connectors ---
 eclass:27440202
-    rdf:type            owl:Class ;
-    rdfs:label          "Shell for industrial connectors"@en ;
-    rdfs:comment        "The outer shell or housing of an industrial connector."@en ;
-    skos:notation       "27440202" ;
-    skos:altLabel       "Hood"@en ;
-    skos:altLabel       "Gehäuse"@de ;
-    skos:altLabel       "connector housing"@en ;
-    rdfs:subClassOf     eclass:27440201 ;
-    skos:exactMatch     etim:EC000437 .
+    rdf:type             owl:Class ;
+    rdfs:label           "Shell for industrial connectors"@en ;
+    eclass:hierarchyCode "27440202" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
 
+# --- 27440203  Coding for industrial connectors ---
+eclass:27440203
+    rdf:type             owl:Class ;
+    rdfs:label           "Coding for industrial connectors"@en ;
+    eclass:hierarchyCode "27440203" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440204  Contact for industrial connectors ---
+eclass:27440204
+    rdf:type             owl:Class ;
+    rdfs:label           "Contact for industrial connectors"@en ;
+    eclass:hierarchyCode "27440204" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440205  Contact insert for industrial connectors ---
 eclass:27440205
-    rdf:type            owl:Class ;
-    rdfs:label          "Insert for industrial connectors"@en ;
-    rdfs:comment        "The interior part of a connector that holds contacts."@en ;
-    skos:notation       "27440205" ;
-    skos:altLabel       "Einsatz"@de ;
-    skos:altLabel       "connector insert"@en ;
-    rdfs:subClassOf     eclass:27440201 ;
-    skos:exactMatch     etim:EC000438 .
+    rdf:type             owl:Class ;
+    rdfs:label           "Contact insert for industrial connectors"@en ;
+    eclass:hierarchyCode "27440205" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
 
+# --- 27440206  Module carrier frame for industrial connectors ---
 eclass:27440206
-    rdf:type            owl:Class ;
-    rdfs:label          "Contact for industrial connectors"@en ;
-    rdfs:comment        "An electrical contact element within a connector."@en ;
-    skos:notation       "27440206" ;
-    skos:altLabel       "Kontakt"@de ;
-    skos:altLabel       "electrical contact"@en ;
-    rdfs:subClassOf     eclass:27440201 ;
-    skos:exactMatch     etim:EC000440 .
+    rdf:type             owl:Class ;
+    rdfs:label           "Module carrier frame for industrial connectors"@en ;
+    eclass:hierarchyCode "27440206" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
 
+# --- 27440207  Adapter for industrial connectors (module/contact insert) ---
+eclass:27440207
+    rdf:type             owl:Class ;
+    rdfs:label           "Adapter for industrial connectors (module/contact insert)"@en ;
+    eclass:hierarchyCode "27440207" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440208  Cap for industrial connectors ---
 eclass:27440208
-    rdf:type            owl:Class ;
-    rdfs:label          "Cable gland / sealing"@en ;
-    rdfs:comment        "A sealing or cable gland component for connectors."@en ;
-    skos:notation       "27440208" ;
-    skos:altLabel       "Kabelverschraubung"@de ;
-    skos:altLabel       "Dichtung"@de ;
-    rdfs:subClassOf     eclass:27440201 ;
-    skos:exactMatch     etim:EC001234 .
+    rdf:type             owl:Class ;
+    rdfs:label           "Cap for industrial connectors"@en ;
+    eclass:hierarchyCode "27440208" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
 
+# --- 27440210  Fixing element for industrial connectors ---
 eclass:27440210
-    rdf:type            owl:Class ;
-    rdfs:label          "Connector accessory"@en ;
-    rdfs:comment        "An accessory used with an industrial connector."@en ;
-    skos:notation       "27440210" ;
-    skos:altLabel       "Zubehör"@de ;
-    rdfs:subClassOf     eclass:27440201 ;
-    skos:exactMatch     etim:EC001235 .
+    rdf:type             owl:Class ;
+    rdfs:label           "Fixing element for industrial connectors"@en ;
+    eclass:hierarchyCode "27440210" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
 
-eclass:27440212
-    rdf:type            owl:Class ;
-    rdfs:label          "Connector tool"@en ;
-    rdfs:comment        "A tool used for assembly or crimping of connectors."@en ;
-    skos:notation       "27440212" ;
-    skos:altLabel       "Werkzeug"@de ;
-    skos:altLabel       "crimping tool"@en ;
-    rdfs:subClassOf     eclass:27440201 ;
-    skos:exactMatch     etim:EC001236 .
+# --- 27440213  D-Sub hood ---
+eclass:27440213
+    rdf:type             owl:Class ;
+    rdfs:label           "D-Sub hood"@en ;
+    eclass:hierarchyCode "27440213" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
 
-eclass:27440215
-    rdf:type            owl:Class ;
-    rdfs:label          "Connector housing frame"@en ;
-    rdfs:comment        "A modular housing frame that holds multiple inserts."@en ;
-    skos:notation       "27440215" ;
-    skos:altLabel       "Gehäuserahmen"@de ;
-    skos:altLabel       "modular housing"@en ;
-    rdfs:subClassOf     eclass:27440202 ;
-    skos:exactMatch     etim:EC001240 .
+# --- 27440214  D-Sub coupler ---
+eclass:27440214
+    rdf:type             owl:Class ;
+    rdfs:label           "D-Sub coupler"@en ;
+    eclass:hierarchyCode "27440214" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
 
-eclass:27440216
-    rdf:type            owl:Class ;
-    rdfs:label          "Frame module"@en ;
-    rdfs:comment        "A module used inside a connector housing frame."@en ;
-    skos:notation       "27440216" ;
-    skos:altLabel       "Rahmenmodul"@de ;
-    rdfs:subClassOf     eclass:27440205 ;
-    skos:exactMatch     etim:EC001241 .
+# --- 27440217  Module for industrial connectors (power/signals) ---
+eclass:27440217
+    rdf:type             owl:Class ;
+    rdfs:label           "Module for industrial connectors (power/signals)"@en ;
+    eclass:hierarchyCode "27440217" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440218  Module for industrial connectors (data) ---
+eclass:27440218
+    rdf:type             owl:Class ;
+    rdfs:label           "Module for industrial connectors (data)"@en ;
+    eclass:hierarchyCode "27440218" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440219  Module for industrial connectors (FO) ---
+eclass:27440219
+    rdf:type             owl:Class ;
+    rdfs:label           "Module for industrial connectors (FO)"@en ;
+    eclass:hierarchyCode "27440219" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440220  Module for industrial connectors (pneumatic) ---
+eclass:27440220
+    rdf:type             owl:Class ;
+    rdfs:label           "Module for industrial connectors (pneumatic)"@en ;
+    eclass:hierarchyCode "27440220" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440223  Contact insert for circular connectors ---
+eclass:27440223
+    rdf:type             owl:Class ;
+    rdfs:label           "Contact insert for circular connectors"@en ;
+    eclass:hierarchyCode "27440223" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440224  Shell for circular connectors ---
+eclass:27440224
+    rdf:type             owl:Class ;
+    rdfs:label           "Shell for circular connectors"@en ;
+    eclass:hierarchyCode "27440224" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440291  Connector component (parts) ---
+eclass:27440291
+    rdf:type             owl:Class ;
+    rdfs:label           "Connector component (parts)"@en ;
+    eclass:hierarchyCode "27440291" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27440292  Connector component (accessories) ---
+eclass:27440292
+    rdf:type             owl:Class ;
+    rdfs:label           "Connector component (accessories)"@en ;
+    eclass:hierarchyCode "27440292" ;
+    rdfs:subClassOf      eclass:274402 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440302  D-Sub-Connector ---
+eclass:27440302
+    rdf:type             owl:Class ;
+    rdfs:label           "D-Sub-Connector"@en ;
+    eclass:hierarchyCode "27440302" ;
+    rdfs:subClassOf      eclass:274403 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440305  FO connector ---
+eclass:27440305
+    rdf:type             owl:Class ;
+    rdfs:label           "FO connector"@en ;
+    eclass:hierarchyCode "27440305" ;
+    rdfs:subClassOf      eclass:274403 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27440313  Test plug ---
+eclass:27440313
+    rdf:type             owl:Class ;
+    rdfs:label           "Test plug"@en ;
+    eclass:hierarchyCode "27440313" ;
+    rdfs:subClassOf      eclass:274403 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27440392  Connector (accessories) ---
+eclass:27440392
+    rdf:type             owl:Class ;
+    rdfs:label           "Connector (accessories)"@en ;
+    eclass:hierarchyCode "27440392" ;
+    rdfs:subClassOf      eclass:274403 ;
+    rdfs:subClassOf      gr:ProductOrService ;
+
+# --- 27460201  PCB connector (board connector) ---
+eclass:27460201
+    rdf:type             owl:Class ;
+    rdfs:label           "PCB connector (board connector)"@en ;
+    eclass:hierarchyCode "27460201" ;
+    rdfs:subClassOf      eclass:274602 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27460202  PCB connector (conductor connection) ---
+eclass:27460202
+    rdf:type             owl:Class ;
+    rdfs:label           "PCB connector (conductor connection)"@en ;
+    eclass:hierarchyCode "27460202" ;
+    rdfs:subClassOf      eclass:274602 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27460290  Plug-in PCB connection technology (unspecified) ---
+eclass:27460290
+    rdf:type             owl:Class ;
+    rdfs:label           "Plug-in PCB connection technology (unspecified)"@en ;
+    eclass:hierarchyCode "27460290" ;
+    rdfs:subClassOf      eclass:274602 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 27469090  PCB connection technology (other, unspecified) ---
+eclass:27469090
+    rdf:type             owl:Class ;
+    rdfs:label           "PCB connection technology (other, unspecified)"@en ;
+    eclass:hierarchyCode "27469090" ;
+    rdfs:subClassOf      eclass:274690 ;
+    rdfs:subClassOf      gr:ProductOrService .
+
+# --- 90909090  Interim classification (unspecified) ---
+eclass:90909090
+    rdf:type             owl:Class ;
+    rdfs:label           "Interim classification (unspecified)"@en ;
+    eclass:hierarchyCode "90909090" ;
+    rdfs:subClassOf      eclass:909090 ;
+    rdfs:subClassOf      gr:ProductOrService .
 
 
 # ==============================================================
-# ABSTRACT TOP-LEVEL CLASSES  (prod: namespace)
-# Used as anchors for properties and assembly rules only.
+# ABSTRACT CLASSES, OBJECT PROPERTIES, DATATYPE PROPERTIES
+# ==============================================================
+
+# ==============================================================
+# ABSTRACT TOP-LEVEL CLASS
 # ==============================================================
 
 prod:IndustrialConnector
     rdf:type            owl:Class ;
     rdfs:label          "Industrial Connector"@en ;
-    rdfs:comment        "Abstract superclass for all industrial connector products."@en ;
+    rdfs:comment        "Abstract superclass for all industrial connector products (eCLASS segment 27 / main group 2744)."@en ;
     skos:definition     "Electrical connector used in industrial environments, typically complying with IEC 61984."@en ;
-    owl:equivalentClass schema:Product ;
-    owl:equivalentClass gr:ProductOrService ;
+    rdfs:subClassOf     schema:Product ;
+    rdfs:subClassOf     gr:ProductOrService ;
     rdfs:subClassOf     gr:SomeItems .
 
-prod:ConnectorAssembly_hasHousing_Restriction
-    rdf:type            owl:Restriction ;
-    rdfs:label          "ConnectorAssembly must have a housing"@en ;
-    owl:onProperty      prod:hasHousing ;
-    owl:someValuesFrom  eclass:27440202 .
-
-prod:ConnectorAssembly_hasInsert_Restriction
-    rdf:type            owl:Restriction ;
-    rdfs:label          "ConnectorAssembly must have an insert"@en ;
-    owl:onProperty      prod:hasInsert ;
-    owl:someValuesFrom  eclass:27440205 .
-
-prod:ConnectorAssembly_hasContact_Restriction
-    rdf:type            owl:Restriction ;
-    rdfs:label          "ConnectorAssembly must have a contact"@en ;
-    owl:onProperty      prod:hasContact ;
-    owl:someValuesFrom  eclass:27440206 .
-
-prod:ConnectorAssembly
+prod:Connector
     rdf:type            owl:Class ;
-    rdfs:label          "Connector Assembly"@en ;
-    rdfs:comment        "A complete assembled connector. Requires a housing, insert, and contact."@en ;
+    rdfs:label          "Connector"@en ;
+    rdfs:comment        "A complete connector assembly. Requires at least one housing, one insert, and electrical contacts."@en ;
     rdfs:subClassOf     prod:IndustrialConnector ;
-    rdfs:subClassOf     prod:ConnectorAssembly_hasHousing_Restriction ;
-    rdfs:subClassOf     prod:ConnectorAssembly_hasInsert_Restriction ;
-    rdfs:subClassOf     prod:ConnectorAssembly_hasContact_Restriction .
+    rdfs:subClassOf
+        [ rdf:type            owl:Restriction ;
+          owl:onProperty      prod:hasHousing ;
+          owl:minCardinality  "1"^^xsd:nonNegativeInteger ] ;
+    rdfs:subClassOf
+        [ rdf:type            owl:Restriction ;
+          owl:onProperty      prod:hasInsert ;
+          owl:minCardinality  "1"^^xsd:nonNegativeInteger ] ;
+    rdfs:subClassOf
+        [ rdf:type            owl:Restriction ;
+          owl:onProperty      prod:hasContact ;
+          owl:minCardinality  "2"^^xsd:nonNegativeInteger ] .
 
 
 # ==============================================================
-# OBJECT PROPERTIES — Relations between products
+# OBJECT PROPERTIES
+# Ranges point to merged leaf classes (no -gen suffix).
 # ==============================================================
 
 prod:hasHousing
     rdf:type            owl:ObjectProperty ;
     rdfs:label          "has housing"@en ;
-    rdfs:comment        "Links a connector assembly to its housing."@en ;
-    rdfs:domain         prod:ConnectorAssembly ;
+    rdfs:comment        "Links a connector to its housing (shell)."@en ;
+    rdfs:domain         prod:Connector ;
     rdfs:range          eclass:27440202 .
 
 prod:hasInsert
     rdf:type            owl:ObjectProperty ;
     rdfs:label          "has insert"@en ;
-    rdfs:domain         prod:ConnectorAssembly ;
+    rdfs:comment        "Links a connector to its contact insert."@en ;
+    rdfs:domain         prod:Connector ;
     rdfs:range          eclass:27440205 .
 
 prod:hasContact
     rdf:type            owl:ObjectProperty ;
     rdfs:label          "has contact"@en ;
-    rdfs:domain         prod:ConnectorAssembly ;
-    rdfs:range          eclass:27440206 .
+    rdfs:comment        "Links a connector to its electrical contacts."@en ;
+    rdfs:domain         prod:Connector ;
+    rdfs:range          eclass:27440204 .
 
 prod:hasTool
     rdf:type            owl:ObjectProperty ;
     rdfs:label          "has tool"@en ;
+    rdfs:comment        "Links a connector to its required assembly or crimping tool."@en ;
     rdfs:domain         prod:IndustrialConnector ;
-    rdfs:range          eclass:27440212 .
+    rdfs:range          eclass:21043811 .
 
 prod:hasAccessory
     rdf:type            owl:ObjectProperty ;
     rdfs:label          "has accessory"@en ;
+    rdfs:comment        "Links a connector product to an optional accessory."@en ;
     rdfs:domain         prod:IndustrialConnector ;
     rdfs:range          eclass:27440210 .
 
@@ -238,7 +1168,7 @@ prod:requiresPart
     rdf:type            owl:ObjectProperty ;
     rdfs:label          "requires part"@en ;
     rdfs:comment        "Defines that an assembly requires a specific type of part."@en ;
-    rdfs:domain         prod:ConnectorAssembly ;
+    rdfs:domain         prod:Connector ;
     rdfs:range          prod:IndustrialConnector .
 
 
@@ -273,68 +1203,3 @@ prod:productSeries
     rdfs:comment        "The product series or family (e.g. Han A, Han B, Han Modular)."@en ;
     rdfs:domain         prod:IndustrialConnector ;
     rdfs:range          xsd:string .
-
-
-
-# ==============================================================
-# ASSEMBLY SUBCLASSES
-# HanAConnector and HanModularConnector are subclasses of
-# ConnectorAssembly. They inherit its restrictions and narrow
-# the required part types to their specific eclass classes.
-# Individual products (e.g. prod:Han10A_3pin) are instances of
-# these subclasses.
-# ==============================================================
-
-prod:HanAConnector_hasHousing_Restriction
-    rdf:type            owl:Restriction ;
-    rdfs:label          "HanAConnector must have a Shell (27440202)"@en ;
-    owl:onProperty      prod:hasHousing ;
-    owl:someValuesFrom  eclass:27440202 .
-
-prod:HanAConnector_hasInsert_Restriction
-    rdf:type            owl:Restriction ;
-    rdfs:label          "HanAConnector must have an Insert (27440205)"@en ;
-    owl:onProperty      prod:hasInsert ;
-    owl:someValuesFrom  eclass:27440205 .
-
-prod:HanAConnector_hasContact_Restriction
-    rdf:type            owl:Restriction ;
-    rdfs:label          "HanAConnector must have a Contact (27440206)"@en ;
-    owl:onProperty      prod:hasContact ;
-    owl:someValuesFrom  eclass:27440206 .
-
-prod:HanAConnector
-    rdf:type            owl:Class ;
-    rdfs:label          "Han A Connector Assembly"@en ;
-    rdfs:comment        "Han A series connector assembly. Requires standard shell (27440202), insert (27440205), and contact (27440206)."@en ;
-    rdfs:subClassOf     prod:ConnectorAssembly ;
-    rdfs:subClassOf     prod:HanAConnector_hasHousing_Restriction ;
-    rdfs:subClassOf     prod:HanAConnector_hasInsert_Restriction ;
-    rdfs:subClassOf     prod:HanAConnector_hasContact_Restriction .
-
-prod:HanModularConnector_hasHousing_Restriction
-    rdf:type            owl:Restriction ;
-    rdfs:label          "HanModularConnector must have a Housing Frame (27440215)"@en ;
-    owl:onProperty      prod:hasHousing ;
-    owl:someValuesFrom  eclass:27440215 .
-
-prod:HanModularConnector_hasInsert_Restriction
-    rdf:type            owl:Restriction ;
-    rdfs:label          "HanModularConnector must have a Frame Module (27440216)"@en ;
-    owl:onProperty      prod:hasInsert ;
-    owl:someValuesFrom  eclass:27440216 .
-
-prod:HanModularConnector_hasContact_Restriction
-    rdf:type            owl:Restriction ;
-    rdfs:label          "HanModularConnector must have a Contact (27440206)"@en ;
-    owl:onProperty      prod:hasContact ;
-    owl:someValuesFrom  eclass:27440206 .
-
-prod:HanModularConnector
-    rdf:type            owl:Class ;
-    rdfs:label          "Han Modular Connector Assembly"@en ;
-    rdfs:comment        "Han Modular series connector assembly. Requires housing frame (27440215), frame module (27440216), and contact (27440206)."@en ;
-    rdfs:subClassOf     prod:ConnectorAssembly ;
-    rdfs:subClassOf     prod:HanModularConnector_hasHousing_Restriction ;
-    rdfs:subClassOf     prod:HanModularConnector_hasInsert_Restriction ;
-    rdfs:subClassOf     prod:HanModularConnector_hasContact_Restriction .
