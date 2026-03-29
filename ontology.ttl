@@ -1087,7 +1087,7 @@ prod:Connector
     rdfs:subClassOf
         [ rdf:type            owl:Restriction ;
           owl:onProperty      prod:hasContact ;
-          owl:minCardinality  "2"^^xsd:nonNegativeInteger ] .
+          owl:minCardinality  "1"^^xsd:nonNegativeInteger ] .
 
 
 # ==============================================================
