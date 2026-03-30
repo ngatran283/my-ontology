@@ -1077,17 +1077,20 @@ prod:Connector
     rdfs:comment        "A complete connector assembly. Requires at least one housing, one insert, and electrical contacts."@en ;
     rdfs:subClassOf     prod:IndustrialConnector ;
     rdfs:subClassOf
-        [ rdf:type            owl:Restriction ;
-          owl:onProperty      prod:hasHousing ;
-          owl:minCardinality  "1"^^xsd:nonNegativeInteger ] ;
+        [ rdf:type                     owl:Restriction ;
+          owl:onProperty               prod:hasHousing ;
+          owl:minQualifiedCardinality  "1"^^xsd:nonNegativeInteger ;
+          owl:onClass                  eclass:27440202 ] ;
     rdfs:subClassOf
-        [ rdf:type            owl:Restriction ;
-          owl:onProperty      prod:hasInsert ;
-          owl:minCardinality  "1"^^xsd:nonNegativeInteger ] ;
+        [ rdf:type                     owl:Restriction ;
+          owl:onProperty               prod:hasInsert ;
+          owl:minQualifiedCardinality  "1"^^xsd:nonNegativeInteger ;
+          owl:onClass                  eclass:27440205 ] ;
     rdfs:subClassOf
-        [ rdf:type            owl:Restriction ;
-          owl:onProperty      prod:hasContact ;
-          owl:minCardinality  "1"^^xsd:nonNegativeInteger ] .
+        [ rdf:type                     owl:Restriction ;
+          owl:onProperty               prod:hasContact ;
+          owl:minQualifiedCardinality  "1"^^xsd:nonNegativeInteger ;
+          owl:onClass                  eclass:27440204 ] .
 
 
 # ==============================================================
