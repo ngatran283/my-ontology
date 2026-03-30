@@ -1065,15 +1065,60 @@ eclass:90909090
 prod:IndustrialConnector
     rdf:type            owl:Class ;
     rdfs:label          "Industrial Connector"@en ;
+    skos:altLabel       "Industriesteckverbinder"@de ;
     rdfs:comment        "Abstract superclass for all industrial connector products (eCLASS segment 27 / main group 2744)."@en ;
     skos:definition     "Electrical connector used in industrial environments, typically complying with IEC 61984."@en ;
     rdfs:subClassOf     schema:Product ;
     rdfs:subClassOf     gr:ProductOrService ;
     rdfs:subClassOf     gr:SomeItems .
 
+prod:MaleContact
+    rdf:type            owl:Class ;
+    rdfs:label          "Male Contact"@en ;
+    skos:altLabel       "Stiftkontakt"@de ;
+    skos:altLabel       "Pin"@en, "Stift"@de ;
+    rdfs:comment        "Electrical contact with male (pin) gender."@en ;
+    rdfs:subClassOf     eclass:27440204 ;
+    owl:disjointWith    prod:FemaleContact ;
+    prod:gender         "Male" .
+
+prod:FemaleContact
+    rdf:type            owl:Class ;
+    rdfs:label          "Female Contact"@en ;
+    skos:altLabel       "Buchsenkontakt"@de ;
+    skos:altLabel       "Socket"@en, "Buchse"@de ;
+    rdfs:comment        "Electrical contact with female (socket) gender."@en ;
+    rdfs:subClassOf     eclass:27440204 ;
+    prod:gender         "Female" .
+
+prod:MaleConnector
+    rdf:type            owl:Class ;
+    rdfs:label          "Male Connector"@en ;
+    skos:altLabel       "Stecker"@de ;
+    skos:altLabel       "Steckerteil"@de ;
+    rdfs:comment        "A complete connector assembly requiring male (pin) contacts."@en ;
+    rdfs:subClassOf     prod:Connector ;
+    rdfs:subClassOf
+        [ rdf:type            owl:Restriction ;
+          owl:onProperty      prod:hasContact ;
+          owl:someValuesFrom  prod:MaleContact ] .
+
+prod:FemaleConnector
+    rdf:type            owl:Class ;
+    rdfs:label          "Female Connector"@en ;
+    skos:altLabel       "Buchse"@de ;
+    skos:altLabel       "Einbauteil"@de ;
+    rdfs:comment        "A complete connector assembly requiring female (socket) contacts."@en ;
+    rdfs:subClassOf     prod:Connector ;
+    rdfs:subClassOf
+        [ rdf:type            owl:Restriction ;
+          owl:onProperty      prod:hasContact ;
+          owl:someValuesFrom  prod:FemaleContact ] .
+
 prod:Connector
     rdf:type            owl:Class ;
     rdfs:label          "Connector"@en ;
+    skos:altLabel       "Steckverbinder"@de ;
     rdfs:comment        "A complete connector assembly. Requires at least one housing, one insert, and electrical contacts."@en ;
     rdfs:subClassOf     prod:IndustrialConnector ;
     rdfs:subClassOf
@@ -1091,12 +1136,6 @@ prod:Connector
           owl:onProperty               prod:hasContact ;
           owl:minQualifiedCardinality  "1"^^xsd:nonNegativeInteger ;
           owl:onClass                  eclass:27440204 ] .
-
-
-# ==============================================================
-# OBJECT PROPERTIES
-# Ranges point to merged leaf classes (no -gen suffix).
-# ==============================================================
 
 prod:hasHousing
     rdf:type            owl:ObjectProperty ;
