@@ -8,6 +8,7 @@
 @prefix schema: <https://schema.org/> .
 @prefix prod:   <https://ngatran283.github.io/my-ontology/> .
 @prefix eclass: <https://ngatran283.github.io/my-ontology/eclass/> .
+@prefix etim:   <https://identifier.buildingsmart.org/uri/etim/etim/10.0/class/> .
 
 # ==============================================================
 # SEGMENTS  (2-digit)
@@ -313,7 +314,7 @@ eclass:274401
 
 eclass:274402
     rdf:type             owl:Class ;
-    rdfs:label           "Industrial connectors (complete components)"@en ;
+    rdfs:label           "Connector component"@en ;
     eclass:hierarchyCode "274402" ;
     rdfs:subClassOf      eclass:2744 .
 
@@ -340,14 +341,6 @@ eclass:909090
     rdfs:label           "Interim classification"@en ;
     eclass:hierarchyCode "909090" ;
     rdfs:subClassOf      eclass:9090 .
-
-
-# ==============================================================
-# LEAF CLASSES  (8-digit)
-# One class per eCLASS product code — taxonomy + generic merged.
-# skos:exactMatch  = same numeric code in eClassOWL 5.1.4
-# skos:closeMatch  = same/similar label, different code
-# ==============================================================
 
 # --- 17130101  Stripping and crimping machine ---
 eclass:17130101
@@ -835,7 +828,8 @@ eclass:27440201
     rdfs:label           "Adapter plate industrial connectors"@en ;
     eclass:hierarchyCode "27440201" ;
     rdfs:subClassOf      eclass:274402 ;
-    rdfs:subClassOf      gr:ProductOrService .
+    rdfs:subClassOf      gr:ProductOrService ;
+    skos:exactMatch      etim:EC000436 .
 
 # --- 27440202  Shell for industrial connectors ---
 eclass:27440202
@@ -843,7 +837,8 @@ eclass:27440202
     rdfs:label           "Shell for industrial connectors"@en ;
     eclass:hierarchyCode "27440202" ;
     rdfs:subClassOf      eclass:274402 ;
-    rdfs:subClassOf      gr:ProductOrService .
+    rdfs:subClassOf      gr:ProductOrService ;
+    skos:exactMatch      etim:EC000437 .
 
 # --- 27440203  Coding for industrial connectors ---
 eclass:27440203
@@ -859,7 +854,8 @@ eclass:27440204
     rdfs:label           "Contact for industrial connectors"@en ;
     eclass:hierarchyCode "27440204" ;
     rdfs:subClassOf      eclass:274402 ;
-    rdfs:subClassOf      gr:ProductOrService .
+    rdfs:subClassOf      gr:ProductOrService ;
+    skos:exactMatch      etim:EC000440 .
 
 # --- 27440205  Contact insert for industrial connectors ---
 eclass:27440205
@@ -867,7 +863,8 @@ eclass:27440205
     rdfs:label           "Contact insert for industrial connectors"@en ;
     eclass:hierarchyCode "27440205" ;
     rdfs:subClassOf      eclass:274402 ;
-    rdfs:subClassOf      gr:ProductOrService .
+    rdfs:subClassOf      gr:ProductOrService ;
+    skos:exactMatch      etim:EC000438 .
 
 # --- 27440206  Module carrier frame for industrial connectors ---
 eclass:27440206
@@ -891,7 +888,8 @@ eclass:27440208
     rdfs:label           "Cap for industrial connectors"@en ;
     eclass:hierarchyCode "27440208" ;
     rdfs:subClassOf      eclass:274402 ;
-    rdfs:subClassOf      gr:ProductOrService .
+    rdfs:subClassOf      gr:ProductOrService ;
+    skos:exactMatch      etim:EC001234 .
 
 # --- 27440210  Fixing element for industrial connectors ---
 eclass:27440210
@@ -899,7 +897,8 @@ eclass:27440210
     rdfs:label           "Fixing element for industrial connectors"@en ;
     eclass:hierarchyCode "27440210" ;
     rdfs:subClassOf      eclass:274402 ;
-    rdfs:subClassOf      gr:ProductOrService .
+    rdfs:subClassOf      gr:ProductOrService ;
+    skos:exactMatch      etim:EC001235 .
 
 # --- 27440213  D-Sub hood ---
 eclass:27440213
