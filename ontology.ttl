@@ -1101,6 +1101,7 @@ prod:MaleLoadedInsert
         [ rdf:type            owl:Restriction ;
           owl:onProperty      prod:hasContact ;
           owl:someValuesFrom  prod:MaleContact ] ;
+    owl:disjointWith    prod:FemaleLoadedInsert ;
     prod:gender         "Male" .
 
 prod:FemaleLoadedInsert
@@ -1114,6 +1115,7 @@ prod:FemaleLoadedInsert
         [ rdf:type            owl:Restriction ;
           owl:onProperty      prod:hasContact ;
           owl:someValuesFrom  prod:FemaleContact ] ;
+    owl:disjointWith    prod:MaleLoadedInsert ;
     prod:gender         "Female" .
 
 prod:MaleConnector
