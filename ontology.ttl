@@ -1090,6 +1090,32 @@ prod:FemaleContact
     rdfs:subClassOf     eclass:27440204 ;
     prod:gender         "Female" .
 
+prod:MaleLoadedInsert
+    rdf:type            owl:Class ;
+    rdfs:label          "Male Loaded Insert"@en ;
+    skos:altLabel       "Bestückter Einsatz Stift"@de ;
+    skos:altLabel       "Stifteinsatz"@de ;
+    rdfs:comment        "A contact insert that already contains male (pin) contacts. Satisfies both insert and contact role."@en ;
+    rdfs:subClassOf     eclass:27440205 ;
+    rdfs:subClassOf
+        [ rdf:type            owl:Restriction ;
+          owl:onProperty      prod:hasContact ;
+          owl:someValuesFrom  prod:MaleContact ] ;
+    prod:gender         "Male" .
+
+prod:FemaleLoadedInsert
+    rdf:type            owl:Class ;
+    rdfs:label          "Female Loaded Insert"@en ;
+    skos:altLabel       "Bestückter Einsatz Buchse"@de ;
+    skos:altLabel       "Buchseneinsatz"@de ;
+    rdfs:comment        "A contact insert that already contains female (socket) contacts. Satisfies both insert and contact role."@en ;
+    rdfs:subClassOf     eclass:27440205 ;
+    rdfs:subClassOf
+        [ rdf:type            owl:Restriction ;
+          owl:onProperty      prod:hasContact ;
+          owl:someValuesFrom  prod:FemaleContact ] ;
+    prod:gender         "Female" .
+
 prod:MaleConnector
     rdf:type            owl:Class ;
     rdfs:label          "Male Connector"@en ;
@@ -1118,7 +1144,7 @@ prod:Connector
     rdf:type            owl:Class ;
     rdfs:label          "Connector"@en ;
     skos:altLabel       "Steckverbinder"@de ;
-    rdfs:comment        "A complete connector assembly. Requires at least one housing, one insert, and electrical contacts."@en ;
+    rdfs:comment        "A complete connector assembly. Requires: min 1 Housing, min 1 Insert, and N Contacts (N = kontaktanzahl on the insert). An insert with a gender value fulfills both insert and contact roles."@en ;
     rdfs:subClassOf     prod:IndustrialConnector ;
     rdfs:subClassOf
         [ rdf:type                     owl:Restriction ;
